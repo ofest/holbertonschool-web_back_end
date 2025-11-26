@@ -10,7 +10,7 @@ async def task_wait_random(n: int, max_delay: int) -> List[float]:
     """
     Run task_wait_random n times and return the delays in ascending order.
     """
-    tasks = [asyncio.create_task(task_wait_random(max_delay)) for _ in range(n)]
+    tasks = [task_wait_random(max_delay) for _ in range(n)]
 
     output = []
     for task in asyncio.as_completed(tasks):
