@@ -3,7 +3,7 @@
 Module that execute multiple coroutines at the same time with async
 """
 import asyncio
-from basic_async_syntax import wait_random
+from 0-basic_async_syntax import wait_random
 
 
 async def wait_n(n: int, max_delay: int = 10) -> list:
