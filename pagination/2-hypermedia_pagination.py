@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""
+Pagination module for handling baby names dataset with page-based reading.
+"""
 import csv
 import math
 from typing import List
