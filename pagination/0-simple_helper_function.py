@@ -3,6 +3,7 @@
 takes two integer arguments
 """
 
+
 def index_range(page, page_size):
     """
     function should return a tuple of size two
