@@ -1,5 +1,3 @@
-#!/usr/bin/node
-
 const http = require('http');
 const fs = require('fs');
 
@@ -22,8 +20,9 @@ const app = http.createServer((req, res) => {
 
       const lines = data.split('\n').filter((line) => line.trim() !== '');
       const headers = lines[0].split(',');
+
+      const firstnameIndex = headers.indexOf('firstname');
       const fieldIndex = headers.indexOf('field');
-      const firstNameIndex = headers.indexOf('firstname');
 
       const students = lines.slice(1);
 
@@ -32,9 +31,9 @@ const app = http.createServer((req, res) => {
       const fields = {};
 
       students.forEach((line) => {
-        const parts = line.split(',');
-        const field = parts[fieldIndex];
-        const firstname = parts[firstNameIndex];
+        const values = line.split(',');
+        const firstname = values[firstnameIndex];
+        const field = values[fieldIndex];
 
         if (!fields[field]) {
           fields[field] = [];
